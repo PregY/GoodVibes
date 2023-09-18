@@ -161,13 +161,13 @@ def get_free_space(solv):
 
     Returns:
     float: accessible free space in solution.
-    """
+    """ 
     solvent_list = ["none", "H2O", "toluene", "DMF", "AcOH", "chloroform", 
                     "thf", "benzene", "dmso", "acetone", "dimethyl_ether", "methanol", "ethanol"]
     molarity = [1.0, 55.6, 9.4, 12.9, 17.4, 12.5,
                 12.3, 11.2, 14.1, 13.5, 45.9, 24.7, 17.1]  # mol/l
     molecular_vol = [1.0, 27.944, 149.070, 77.442, 86.10, 97.0,
-                     107.06, ]  # Angstrom^3
+                     107.06, 116.41, 99.41, 88.717, 97.557, 50.114, 74.313 ]  # Angstrom^3
 
     nsolv = 0
     for i in range(0, len(solvent_list)):
