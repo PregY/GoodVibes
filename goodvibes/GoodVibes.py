@@ -681,7 +681,7 @@ def main():
     parser.add_argument("--invertifreq", dest="invert", nargs='?', const=True, default=False,
                         help="Make low lying imaginary frequencies positive (cutoff > -50.0 wavenumbers)")
     parser.add_argument("--freespace", dest="freespace", default="none", type=str, metavar="FREESPACE",
-                        help="Solvent (H2O, toluene, DMF, AcOH, chloroform) (default none)")
+                        help="Solvent (H2O, toluene, DMF, AcOH, chloroform, thf, benzene, dmso, acetone, dimethyl_ether, methanol, ethanol) (default none)")
     parser.add_argument("--dup", dest="duplicate", action="store_true", default=False,
                         help="Remove possible duplicates from thermochemical analysis")
     parser.add_argument("--cosmo", dest="cosmo", default=False, metavar="COSMO-RS",

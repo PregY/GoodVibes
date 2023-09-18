@@ -144,6 +144,8 @@ def calc_zeropoint_energy(frequency_wn, freq_scale_factor, fract_modelsys):
     energy = [0.5 * entry * GAS_CONSTANT for entry in factor]
     return sum(energy)
 
+#TODO: add V_solv for others
+#NOTE V_solv of THF from the JP
 def get_free_space(solv):
     """
     Computed the amount of accessible free space (ml per L) in solution.
@@ -155,14 +157,17 @@ def get_free_space(solv):
     literature values for molarity and B3LYP/6-31G* computed molecular volumes.
 
     Parameter:
-    solv (str): solvent used in chemical calculation.
+    solv (str): solvent used in chemical calculation.  Available choice: ["none", "H2O", "toluene", "DMF", "AcOH", "chloroform"]
 
     Returns:
     float: accessible free space in solution.
     """
-    solvent_list = ["none", "H2O", "toluene", "DMF", "AcOH", "chloroform"]
-    molarity = [1.0, 55.6, 9.4, 12.9, 17.4, 12.5]  # mol/l
-    molecular_vol = [1.0, 27.944, 149.070, 77.442, 86.10, 97.0]  # Angstrom^3
+    solvent_list = ["none", "H2O", "toluene", "DMF", "AcOH", "chloroform", 
+                    "thf", "benzene", "dmso", "acetone", "dimethyl_ether", "methanol", "ethanol"]
+    molarity = [1.0, 55.6, 9.4, 12.9, 17.4, 12.5,
+                12.3, 11.2, 14.1, 13.5, 45.9, 24.7, 17.1]  # mol/l
+    molecular_vol = [1.0, 27.944, 149.070, 77.442, 86.10, 97.0,
+                     107.06, ]  # Angstrom^3
 
     nsolv = 0
     for i in range(0, len(solvent_list)):
